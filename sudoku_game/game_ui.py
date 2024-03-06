@@ -94,10 +94,9 @@ class GameUI:
         self.stdscr.addstr(self.y_center, self.x_center - int(len(message)/2), message)
         while True:
             k = self.stdscr.getch()
-            c = chr(k)
-            if c == '!':
+            if k == self.KEY_QUIT:
                 sys.exit(0)
-            elif c == '?':
+            elif k == self.KEY_RESTART:
                 self.init_game()
                 break
 
