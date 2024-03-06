@@ -4,6 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "play-sudoku"
+dynamic = ["version"]
 authors = [
     {name = "4sushi"},
 ]
