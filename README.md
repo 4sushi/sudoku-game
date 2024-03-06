@@ -8,7 +8,7 @@ Sudoku game, made with python & curses. Play in the terminal. For Linux, Mac OS 
 ## How to install
 
 ```shell
-$ pip install sudoku-game
+$ pip install play-sudoku
 ```
 
 ## How to play

@@ -21,7 +21,7 @@ class GameUI:
         self.KEY_QUIT: int = ord('!')
         self.KEY_RESTART: int = ord('?')
         self.KEY_ENTER: int = 10
-        self.KEY_DEL: int = 127
+        self.KEYS_DEL: List[int] = [127, 8, curses.KEY_DL, curses.KEY_DC, curses.KEY_BACKSPACE]
         self.ID_COLOR_RED: int = 1
         self.init_game()
         curses.wrapper(self.init_screen)
@@ -50,7 +50,7 @@ class GameUI:
                 elif ord('1') <= k <= ord('9'):
                     value: int = int(chr(k))
                     self.controller_digit(value)
-                elif k == self.KEY_DEL or k == ord('0'):
+                elif k in self.KEYS_DEL or k == ord('0'):
                     self.controller_del()
                 elif k == self.KEY_RESTART:
                     self.popup_new_game()
@@ -147,7 +147,7 @@ class GameUI:
             params = curses.A_STANDOUT | curses.A_BOLD
         self.stdscr.addstr(2+i_row*2, 3+i_col*4 -1, f' {val} ', params)
 
-        info_menu: str = (f'({self.game.get_difficulty()}) [←][→][↑][↓]navigate [Del←]delete  [1-9]set value [?]new '
+        info_menu: str = (f'({self.game.get_difficulty()}) [←][→][↑][↓]navigate [Del←][0]delete  [1-9]set value [?]new '
                           f'game [!]quit')
         self.stdscr.addstr(self.height-1, 0, info_menu + ' '*(self.width-len(info_menu)-1), curses.A_STANDOUT)
         self.stdscr.refresh()

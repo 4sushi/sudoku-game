@@ -3,8 +3,8 @@ requires      = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "sudoku-game"
-version = "0.0.1"
+name = "play-sudoku"
+version = "0.0.2"
 authors = [
     {name = "4sushi"},
 ]
@@ -20,7 +20,7 @@ classifiers = [
 dependencies = ['windows-curses >= 2.3.2 ; platform_system == "Windows"']
 
 [project.scripts]
-sudoku-game = "sudoku_game.main:main"
+play-sudoku = "sudoku_game.main:main"
 sudoku = "sudoku_game.main:main"
 
 [project.urls]
