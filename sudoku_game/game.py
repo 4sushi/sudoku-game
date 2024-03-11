@@ -1,5 +1,6 @@
 # Author: 4sushi
 
+from __future__ import annotations
 from typing import List, Tuple
 import random
 import copy
@@ -119,4 +120,3 @@ class GameSudoku:
     
     def get_difficulty(self) -> str:
         return self.DIFFICULTIES[self.difficulty]
-

@@ -1,10 +1,11 @@
 # Author: 4sushi
-
+from __future__ import annotations
 import curses
 from sudoku_game.game import GameSudoku
-from typing import List, Optional, Dict
+from typing import List, Optional
 import sys
 from datetime import datetime, timedelta
+
 
 
 class GameUI:
